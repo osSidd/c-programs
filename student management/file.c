@@ -1,26 +1,21 @@
 #include<stdio.h>
-
-struct cric_record {
-    char name[20];
-    int age;
-    int test_match;
-    float avg_runs;
-};
-
-struct cric_record records[5] = {
-    "Sunil Gavaskar", 32, 200, 200,
-    "Sachin Tendulkar", 33, 300, 132.2,
-    "Saurav Ganguly", 21, 200, 153.2,
-    "Don Bradman", 43, 400, 211.2,
-    "Brian Lara", 44, 420, 235.5 
-};
-
 void main(){
-    struct cric_record *p;
-    p = records;
+   int matrix[][5] = {
+    {1, 2, 3, 4, 5},
+    {2, 52, 923, 11, 23},
+    {11, 23, 42, 23, 64},
+    {53, 643, 23, 23, 34},
+    {64, 92, 3822, 343, 23}
+   };
 
-    for(int i = 0; i<=4; i++){
-        printf("%s %d %d %.1f\n", p->name, p->age, p->test_match, p->avg_runs);
-        p += 1;
+   int num = matrix[0][0];
+
+   for(int i = 0; i<5; i++){
+    for(int j = 0; j<5; j++){
+        if(matrix[i][j] > num)
+            num = matrix[i][j];
     }
+   }
+
+   printf("%d\n", num);
 }
