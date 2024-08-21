@@ -1,13 +1,6 @@
 void functions();
 
 void functions(){
-    int num, sum = 0;
-    printf("Enter a five digit number ");
-    scanf("%d", &num);
-    while(num){
-        sum += (num % 10);
-        num /= 10;
-    }
-
-    printf("sum of digits  = %d", sum);
+    int k = 32;
+    printf("%d %d %d %d", k = 2, k = 50, k < 44, k > 40);
 }
