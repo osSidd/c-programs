@@ -2,20 +2,24 @@
 void functions();
 
 void functions(){
-    int num, rev_num = 0, i = 10 * 1000;
+    int num1, num2, sum = 1;
 
-    printf("enter a five digit number ");
-    scanf("%d", &num);
+    printf("Enter two numbers ");
+    scanf("%d %d", &num1, &num2);
 
-    int original = num;
+    switch(1)
+    {
+        case ( 2 < 3 && 2 > 5):
+            printf("Hi");
+        case 2 || 3:
+            printf("Bye");
 
-    while(num){
-        rev_num += (num % 10) * i;
-        i /= 10;
-        num /= 10;
     }
 
-    printf("The original number = %d and reversed number = %d\n", original, rev_num);
+    while(num2 >=1 ){
+        sum *= num1;
+        num2--;
+    }
 
-    (original == rev_num) ? printf("Both are equal") : printf("Not equal");
+    printf("%d raised to the power of %d is %d", num1, num2, sum);
 }
