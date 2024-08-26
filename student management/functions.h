@@ -1,25 +1,22 @@
 
 void functions();
 
+
 void functions(){
-    int num1, num2, sum = 1;
+    int matches = 21;
 
-    printf("Enter two numbers ");
-    scanf("%d %d", &num1, &num2);
+    while(matches > 0){
+        int human;
+        int computer =4;
 
-    switch(1)
-    {
-        case ( 2 < 3 && 2 > 5):
-            printf("Hi");
-        case 2 || 3:
-            printf("Bye");
+        printf("computer picks %d", computer);
+        matches -= computer;
 
+        printf("pick a stick\n");
+        scanf("%d", &human);
+
+        matches -= human;
+
+        printf("sticks remaining %d", matches);
     }
-
-    while(num2 >=1 ){
-        sum *= num1;
-        num2--;
-    }
-
-    printf("%d raised to the power of %d is %d", num1, num2, sum);
-}
+} 
