@@ -1,22 +1,15 @@
 
 void functions();
-
+void display();
 
 void functions(){
-    int matches = 21;
-
-    while(matches > 0){
-        int human;
-        int computer =4;
-
-        printf("computer picks %d", computer);
-        matches -= computer;
-
-        printf("pick a stick\n");
-        scanf("%d", &human);
-
-        matches -= human;
-
-        printf("sticks remaining %d", matches);
-    }
+    static i = 0;
+    printf("Only Stupids use C\n");
+    i++;
+    if(i < 5) functions();
 } 
+
+void display(){
+    printf("Fools use C too!");
+    functions();
+}
