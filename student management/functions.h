@@ -1,15 +1,15 @@
 
 void functions();
-void display();
+int display(int);
 
 void functions(){
     static i = 0;
+    int a;
     printf("Only Stupids use C\n");
-    i++;
-    if(i < 5) functions();
+    // a = display(display(44));
 } 
 
-void display(){
-    printf("Fools use C too!");
-    functions();
+int display(int cc){
+    printf("Fools use C too! %d", cc);
+    return 3;     
 }
