@@ -1,15 +1,17 @@
-
 void functions();
-int display(int);
+int sum_of_digits(int);
 
 void functions(){
-    static i = 0;
-    int a;
-    printf("Only Stupids use C\n");
-    // a = display(display(44));
-} 
 
-int display(int cc){
-    printf("Fools use C too! %d", cc);
-    return 3;     
+    int num;
+    printf("Enter a 5 digit number\n");
+    scanf("%d", &num);
+    printf("The of digits of %d is %d", num, sum_of_digits(num));
+}
+
+int sum_of_digits(int a){
+    if(!(a / 10))
+        return a;
+    else
+        return (a % 10) + sum_of_digits(a / 10);
 }
