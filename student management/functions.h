@@ -1,17 +1,32 @@
 void functions();
-int sum_of_digits(int);
 
 void functions(){
+    printf("Enter two numbers");
+    int num1, num2;
 
-    int num;
-    printf("Enter a 5 digit number\n");
-    scanf("%d", &num);
-    printf("The of digits of %d is %d", num, sum_of_digits(num));
-}
+    scanf("%d %d", &num1, &num2);
 
-int sum_of_digits(int a){
-    if(!(a / 10))
-        return a;
-    else
-        return (a % 10) + sum_of_digits(a / 10);
+    int rem, temp;
+    int sub_rem;
+
+    printf("Greatest common divisor of %d and %d ", num1, num2);
+
+    if(num2 > num1){
+        temp = num1;
+        num1 = num2;
+        num2 = temp;
+    }
+
+    rem = num1 / num2;
+    sub_rem = num1 - (rem * num2);
+
+    while(sub_rem){
+        num1 = num2;
+        num2 = sub_rem;
+
+        rem = num1/num2;
+        sub_rem = num1 - (rem * num2);
+    }
+
+    printf("is %d", num2);
 }
