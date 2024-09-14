@@ -1,31 +1,16 @@
 void functions();
-int gcd(int, int);
 
 void functions(){
-    printf("Enter two numbers");
-    int num1, num2, temp;
+    float ram_dia = 30., plunger_dia = 4.5; // dia in cm
 
-    scanf("%d %d", &num1, &num2);
+    float force = 500, weight; //Force in newton
 
-    printf("Greatest common divisor of %d and %d ", num1, num2);
+    ram_dia /= 100;
+    plunger_dia /= 100;
 
-    if(num2 > num1){
-        temp = num1;
-        num1 = num2;
-        num2 = temp;
-    }
-    printf("is %d", gcd(num1, num2));
-}
+    //Since pressure is same at any point
+    // printf("%f %f", ram_dia, plunger_dia);
+    weight = (force * (ram_dia * ram_dia)) / (plunger_dia * plunger_dia);
 
-int gcd(int num1, int num2){
-    int rem, temp;
-    int sub_rem;
-
-    rem = num1 / num2;
-    sub_rem = num1 - (rem * num2);
-
-    if(!sub_rem)
-        return num2;
-    
-    return gcd(num2, sub_rem);
+    printf("Weight which can be lifted is %.2f KN", weight/1000);
 }
